@@ -1,4 +1,5 @@
 # Django settings for boondoh project.
+import localsettings
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -91,6 +92,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'IP_cases',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
