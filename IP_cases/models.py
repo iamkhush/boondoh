@@ -57,3 +57,5 @@ class district_courts_and_judges(models.Model):
     retirement = models.CharField(max_length=500)
     termination_date = models.CharField(max_length=500)
 
+    def __unicode__(self):
+        return "%s %s" %(self.judge_first_name,self.judge_last_name)
