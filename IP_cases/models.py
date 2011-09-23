@@ -15,6 +15,9 @@ class notice_of_appearence(models.Model):
     attorney_last_name = models.CharField(max_length=500)
     notes = models.CharField(max_length=500)
     
+    def __unicode__(self):
+        return "Attorney %s %s " %(self.attorney_first_name,self.attorney_last_name)
+    
 class itc_cases(models.Model):
     invoice_number = models.CharField(max_length=500)
     matter = models.CharField(max_length=500)
@@ -42,6 +45,9 @@ class itc_cases(models.Model):
     target_date = models.CharField(max_length=500)
     violation_final_due_date = models.CharField(max_length=500)
     beg_end_dates_of_hearing = models.CharField(max_length=500)
+    
+    def __unicode__(self):
+        return "Case with invoice number %s " %(self.invoice_number)
     
 class district_courts_and_judges(models.Model):
     judge_first_name = models.CharField(max_length=500)
