@@ -14,10 +14,12 @@ class notice_of_appearence(models.Model):
     attorney_first_name = models.CharField(max_length=500)
     attorney_last_name = models.CharField(max_length=500)
     notes = models.CharField(max_length=500)
-    
+    location = models.ForeignKey('location')
+
     def __unicode__(self):
         return "Attorney %s %s " %(self.attorney_first_name,self.attorney_last_name)
     
+         
 class itc_cases(models.Model):
     invoice_number = models.CharField(max_length=500)
     matter = models.CharField(max_length=500)
@@ -65,3 +67,9 @@ class district_courts_and_judges(models.Model):
 
     def __unicode__(self):
         return "%s %s" %(self.judge_first_name,self.judge_last_name)
+
+class location(models.Model):
+    state = models.CharField(max_length=500)
+    office = models.CharField(max_length=500)
+    class Meta:
+        unique_together = ('state', 'office')

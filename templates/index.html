@@ -1,9 +1,30 @@
 <html>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <head>
         <title>IP Cases</title>            
     </head>
     <body>
         <h1>IP Cases</h1>
-        {{ form }}
+                   Location:{{ form.loc }}
+                   <br /><br />
+                   <div id="id_notice"></div>
     </body>    
+<script type="text/javascript">
+     $('#id_loc').change( function(){
+         var loc_id = $(this).val();
+       	    	$.ajax({
+     			  type: "GET",
+     			  url: "/get-notice/",
+     			  data: "locid=" + loc_id,
+                  success: function(msg){
+                  	$('#id_notice').html(msg);
+                  	}
+                });
+    });
+    $('#id_loc').prepend('<option value="" selected = selected>--Select--</option>');
+    
+</script>
+
 </html>
+
+
