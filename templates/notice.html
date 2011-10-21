@@ -1,0 +1,33 @@
+<table border="2">
+<tr>
+        <td><b>Doc ID</b></td>
+        <td><b>Inv Num</b></td>
+        <td><b>Sec</b></td>
+        <td><b>F</b></td>
+        <td><b>Official Receive</b></td>
+        <td><b>Firm/Organization</b></td>
+        <td><b>Filed On Behalf</b></td>
+        <td><b>Office</b></td>
+        <td><b>State</b></td>
+        <td><b>Attorney First Name</b></td>
+        <td><b>Attorney Last Name</b></td>
+        <td><b>notes</b></td>
+    </tr>
+{% for notice in notice_list %}
+    <tr>  
+        <td>{{ forloop.counter }}</td>
+        <td>{{ notice.doc_id }}</td>
+        <td>{{ notice.invoice_number }}</td>
+        <td>{{ notice.sec }}</td>
+        <td>{{ notice.F }}</td>
+        <td>{{ notice.offcial_recieve }}</td>
+        <td>{{ notice.firm__or_organisation }}</td>
+        <td>{{ notice.filled_on_behalf }}</td>
+        <td>{{ notice.office }}</td>
+        <td>{{ notice.state }}</td>
+        <td>{{ notice.attorney_first_name }}</td>
+        <td>{{ notice.attorney_last_name }}</td>
+        <td>{{ notice.notes }}</td>
+    </tr>
+{% endfor %}
+</table>
